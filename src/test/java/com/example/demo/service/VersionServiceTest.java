@@ -8,6 +8,8 @@ import org.mockito.junit.jupiter.MockitoSettings;
 
 @MockitoSettings
 class VersionServiceTest {
+	
+	public static final String VERSAO = "1.0";
 
 	@InjectMocks
 	private VersionService versionService;
@@ -16,7 +18,7 @@ class VersionServiceTest {
 	void test() {
 		String version = versionService.getVersion();
 		
-		assertEquals("1.0", version);
+		assertEquals(VERSAO, version);
 	}
 
 }
