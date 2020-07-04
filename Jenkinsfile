@@ -8,7 +8,11 @@ node('maven-build-slave') {
     archive 'target/*.jar'
   }
   
-  
+  stage ('Integration Test'){
+    sh 'mvn clean verify -Dsurefire.skip=true';
+    junit '**/target/failsafe-reports/TEST-*.xml'
+    archive 'target/*.jar'
+  }
   stage ('Publish'){
     def server = Artifactory.server 'Default Artifactory Server'
     def uploadSpec = """{
