@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,10 +18,21 @@ public class VersionIT {
 	@Autowired
     private MockMvc mockMvc;
 	
+//	@Autowired
+//	private RestTemplate restTemplate;
+	
+//	private MockRestServiceServer mockServer;
+	
+	@BeforeEach
+	public void setUp() {
+//		mockServer = MockRestServiceServer.bindTo(restTemplate).bufferContent().build();
+	}
+	
 	@Test
-	public void test() throws Exception {
-		 mockMvc.perform(get("/version")
+	public void testaServico() throws Exception {
+		 this.mockMvc.perform(get("/version")
 		            .contentType("application/json"))
-		            .andExpect(status().isOk());
+		            .andExpect(status().isOk())
+		            .andDo(print());
 	}
 }

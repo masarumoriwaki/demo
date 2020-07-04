@@ -15,7 +15,7 @@ class VersionServiceTest {
 	private VersionService versionService;
 	
 	@Test
-	void test() {
+	void testarVersao() {
 		String version = versionService.getVersion();
 		
 		assertEquals(VERSAO, version);
