@@ -16,7 +16,7 @@ node('maven-build-slave') {
         {
           "pattern": "target/demo-0.0.1.jar",
           "target": "demo-project/${BUILD_NUMBER}/",
-          "props": "Integration-Tested=Yes;Performance-Tested=No"
+          "props": "Integration-Tested=No;Performance-Tested=No"
         }
       ]
     }"""
