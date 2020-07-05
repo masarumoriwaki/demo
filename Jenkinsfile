@@ -10,7 +10,7 @@ node('maven-build-slave') {
   
 
   stage ('Publish'){
-    def server = Artifactory.server 'Default Artifactory Server'
+    def server = Artifactory.server 'default artifactory'
     def uploadSpec = """{
       "files": [
         {
