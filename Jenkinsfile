@@ -10,7 +10,7 @@ node('maven-build-slave') {
   
 
   stage ('Publish'){
-    def server = Artifactory.newServer url: 'http://localhost:8082/artifactory', username: 'admin', password: 'rasengan21'
+    def server = Artifactory.server 'default artifactory'
     def uploadSpec = """{
       "files": [
         {
