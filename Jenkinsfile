@@ -20,6 +20,6 @@ node('maven-build-slave') {
         }
       ]
     }"""
-    server.upload(uploadSpec)
+    server.upload spec: uploadSpec
   }
 }
