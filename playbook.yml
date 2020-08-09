@@ -1,0 +1,10 @@
+- hosts: localhost
+  become_method: sudo
+  tasks:
+  - name: run Demo container
+    docker_container:
+      name: demo
+      image: demo
+      state: started
+      ports:
+      - "9010:8080"
