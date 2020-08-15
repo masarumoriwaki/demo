@@ -1,4 +1,4 @@
-node('maven-build-slave-0.2') {
+node('maven-build-slave') {
   stage('Poll') {
     checkout scm
   }
