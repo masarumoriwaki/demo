@@ -6,8 +6,6 @@ node('maven-build-slave') {
     sh 'mvn clean verify -DskipITs=true';
     junit '**/target/surefire-reports/TEST-*.xml'
     archiveArtifacts artifacts: 'target/*.jar'
-    sh 'ls';
-    sh 'ls target/';
   }
   
 
