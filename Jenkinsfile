@@ -3,12 +3,11 @@ node('maven-build-slave') {
     checkout scm
   }
   stage('Build & Unit test'){
-    sh 'mvn verify -DskipITs=true';
+    sh 'mvn clean verify -DskipITs=true';
     junit '**/target/surefire-reports/TEST-*.xml'
     archiveArtifacts artifacts: 'target/*.jar'
     sh 'ls';
-    sh 'cd target/';
-    sh 'ls';
+    sh 'ls target/';
   }
   
 
