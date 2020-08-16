@@ -15,7 +15,7 @@ node('maven-build-slave') {
       "files": [
         {
           "pattern": "target/demo-0.0.1.jar",
-          "target": "demo-project/"
+          "target": "demo-project/${BUILD_NUMBER}/"
         }
       ]
     }"""
